@@ -1,0 +1,21 @@
+body {
+    background: #ededed;
+    font-family: sans-serif;
+}
+
+header {
+    padding: 1.5em;
+}
+
+section {
+    padding: 1.5em;    
+}
+
+article {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px #ccc;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+}
