@@ -1,6 +1,25 @@
-/* -------------------- BEGIN VAN DE ALGEMENE CSS -------------------  */ 
+/* -------------------- BEGIN VAN DE ALGEMENE CSS -------------------  */
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600');
+
+
+a[href]
+/* alle href's */
+a[href^="hhtps://"]
+/* als het begint met */
+a[href*="hhtps://"]
+/* als het er in voorkomt */
+a[href$=".pdf"]
+/* als het eindigd met */
+
+p:first-of-type [ color: blue;
+] animation: wiggle;
+
+keyframes p:nth-of-type(3) {
+    font-weight: bold;
+    /* bij zoveelste item een andere styling */
+}
+
 
 body {
     background: #f5f5f6;
@@ -21,6 +40,7 @@ h2 {
     color: #00477f;
     font-weight: 400;
 }
+
 h2::after {
     bottom: -10px;
     content: "";
@@ -29,24 +49,63 @@ h2::after {
     height: .05em;
     margin-bottom: 2em;
     position: relative;
-    width: 5.25em; 
+    width: 5.25em;
 }
 
-/* -------------------- EINDE VAN DE ALGEMENE CSS -------------------  */ 
+button:focus { 
+    outline: none; 
+}
+input:focus {
+    outline: none;
+}
 
-/* -------------------- BEGIN VAN HEADER MET SEARCH EN FILTER -------------------  */  
+
+/* -------------------- EINDE VAN DE ALGEMENE CSS -------------------  */
+
+/* -------------------- BEGIN VAN HEADER MET SEARCH EN FILTER -------------------  */
 
 header {
-    background: #fff;
+    background: #f5f5f6;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }
 
-nav {
+header section {
     width: 100%;
     background: #fff;
     height: 4em;
     display: block;
+    padding: 0em;
     box-shadow: 1px 1px 20px #bcbcbc;
+    grid-column: 1 / 7;
 }
+
+header section:first-child {
+    height: 4em;
+}
+
+header section:first-child img:nth-of-type(2) {
+    height: 2em;
+    width: 2em;
+    display: none;
+}
+
+header section:nth-of-type(2) {
+    background-image: url(afb/background_ret.jpg);
+    height: 29em;
+    margin-top: -11em;
+    display: block;
+}
+
+header section:nth-of-type(3) {
+    display: flex;
+    flex-direction: column;
+    transition: all .5s;
+    padding: 1em;
+    grid-column: 3 / 5;
+    height: 20em;
+}
+
 h1 {
     margin: 0 auto;
     margin-bottom: 1em;
@@ -59,6 +118,7 @@ legend {
     color: #00477f;
     font-size: 20px;
     margin-bottom: 2em;
+    padding: 0;
 }
 
 legend::after {
@@ -70,32 +130,96 @@ legend::after {
     margin-bottom: .5em;
     position: relative;
     width: 5.25em;
-    
- }
+
+}
 
 
-.searchbar {
+header form:nth-of-type(1) {
     height: 6em;
     padding-top: 4em;
-    background: url("afb/metro.jpg"); 
+    z-index: 99;
+    grid-column: 3 / 5;
+    
 }
-.searchbar input {
+
+header form:nth-of-type(1) input {
     width: 100%;
     padding: 1em;
     border: none;
     font-size: 16px;
-    font-weight:300;
+    font-weight: 300;
     font-style: italic;
     color: #b6b6b8;
     border-radius: 3px;
-    
-    
+    grid-column: 2 / 5;
 }
+
+
+nav {
+    display: flex;
+    margin-top: -6em;
+    grid-column: 2 / 5;
+}
+
+nav button {
+    background-color: #f5f5f6;
+    border: none;
+    border-radius: 4px 4px 0 0;
+    padding: 1em;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.7;
+    justify-content: space-between;
+    width: 50%;
+    padding-bottom: 0.5em;
+    vertical-align: bottom;
+    cursor: pointer;
+    margin-top: 1em;
+    color: #6d6e71;
+    display: block;
+}
+
+nav button:hover {
+    -webkit-transition: 0.1s; /* Safari */
+    transition: .3s;
+}
+
+nav button:nth-of-type(2):hover {
+    color: black;
+    cursor: pointer;
+}
+
+nav button:nth-of-type(1) {
+    padding-top: 1em;
+    text-align: left;
+}
+
+nav button:nth-of-type(2) {
+    text-align: right;
+}
+
+nav button:nth-of-type(2)::after {
+    float: right;
+}
+
+
+ul {
+    display: flex;
+}
+
 form {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     transition: all .5s;
-    padding:1em;
+    padding: 1em;
+    display: block;
+    grid-column: 2 / 5;
+}
+
+form:nth-of-type(2) {
+    background-color: #fff;
+    display: none;
 }
 
 fieldset {
@@ -107,26 +231,35 @@ fieldset {
 label {
     color: #00477f;
     padding: 1em;
-    padding-left: 0; 
+    padding-left: 0;
     margin-bottom: 1em;
 }
 
-fieldset
-input {
+fieldset input {
     border: 2px solid #ebebec;
-    padding:.5em .25em;
+    padding: .5em .25em;
     font-size: 1.25em;
     margin-bottom: 1.5em;
     margin-top: .5em;
-    width:100%;
-    z-index:2;
+    width: 100%;
+    z-index: 2;
     border-radius: 3px;
 }
 
-button {
+form fieldset button:nth-of-type(1) {
+    background-color: #e0e0e0;
+    color: gray;
+    width: 10em;
+    margin-right: 1em;
+}
+
+fieldset div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+fieldset div button {
     border: none;
-    float: right;
-    display: block;
     height: 4em;
     width: 15em;
     border-radius: 4px;
@@ -136,21 +269,61 @@ button {
     font-size: 14px;
     transition: all 0.2s;
     margin-right: -1em;
+
 }
-button:hover {
+
+form button:hover {
     background-color: #d4effc;
     color: #00477f;
 }
 
-/* -------------------- EINDE VAN DE HEADER MET FILTER EINDE -------------------  */ 
 
 
+/* -------------------- BEGIN FILTER STATE  -------------------  */
 
 
-/* -------------------- BEGIN VAN DE ARTICLES SECTIE -------------------  */ 
+.active {
+    background-color: #fff;
+    color: #13679c;
+    margin-top: 0em;
+    
+}
+
+.active::after {
+    display: block;
+    width: 112px;
+    height: 2px;
+    border-bottom: 2px #009ddb solid;
+    margin: 6px 0 0;
+    content: '';
+    position: relative;
+}
+
+.show {
+    display: block !important;
+}
+
+/* -------------------- EINDE FILTER STATE EINDE -------------------  */
+
+/* -------------------- EINDE VAN DE HEADER MET FILTER EINDE -------------------  */
+
+
+/* -------------------- BEGIN VAN DE ARTICLES SECTIE -------------------  */
+
+main {
+   display: grid; 
+   grid-template-columns: repeat(5, 1fr);
+   
+}
 
 section {
-    padding: 0.9em;    
+    padding: 0.9em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   
+    grid-gap: 1em;
+    grid-column-start: 2;
+    grid-column-end: 5;
 }
 
 article {
@@ -162,15 +335,16 @@ article {
     text-align: center;
     color: #6d6e71;
     padding: 1em;
-    transition: all 0.2s cubic-bezier(.87,-.41,.19,1.44);
+    transition: all 0.2s cubic-bezier(.87, -.41, .19, 1.44);
 }
 
 p {
-    line-height: 1.5em;
+    line-height: 1em;
 }
+
 h3 {
     color: #00477f;
-    font-weight: 400; 
+    font-weight: 400;
 }
 
 h3::after {
@@ -182,14 +356,39 @@ h3::after {
     margin: 0 auto;
     margin-bottom: 2em;
     position: relative;
-    width: 5.25em; 
+    width: 5.25em;
 }
 
-article footer p{
+article footer {
+    padding-top: 0;
+    
+}
+
+article footer img {
+    margin: 0 0.4em;
+    margin-bottom: 1em;
+    padding-top: 1em;
+    width: 1.5em;
+    height: 1em;
+}
+
+article footer p {
     font-size: 16px;
-    font-weight:300;
+    font-weight: 300;
     font-style: italic;
-    color: #00477f;
+    color: #b9b9b9;
+    margin-bottom: 0;
+    padding-top: 0;
+}
+
+article footer section {
+    display: flex;
+    padding-bottom: 0;
+    justify-content: center;
+}
+
+article footer section::after {
+    display: none;
 }
 
 article:hover {
@@ -204,13 +403,13 @@ img {
     border-radius: 4px 4px 0 0;
 }
 
-/* -------------------- EINDE VAN DE ARTICLES EINDE -------------------  */ 
+/* -------------------- EINDE VAN DE ARTICLES EINDE -------------------  */
 
-/* -------------------- BEGIN VAN DE FOOTER -------------------  */ 
+/* -------------------- BEGIN VAN DE FOOTER -------------------  */
 
 footer {
     background: #fff;
-    padding: 2em 0 1em;
+    padding: 1em 0 0;
 }
 
 footer section::after {
@@ -230,21 +429,97 @@ footer img {
     padding-top: 1em;
     width: 5em;
     height: auto;
-    float: right
 }
+
 h4 {
     color: #00477f;
-    font-weight: 400; 
+    font-weight: 400;
     font-size: 1.2em;
 }
+
 ul {
     margin-left: 0;
     padding: 0;
 }
+
 ul li {
     list-style-type: none;
     margin-bottom: 1em;
     color: #13679c;
 }
 
-/* -------------------- EINDE VAN DE FOOTER EINDE -------------------  */ 
+/* -------------------- EINDE VAN DE FOOTER EINDE -------------------  */
+
+/* -------------------- BEGIN VAN DE MEDIAQUERIES -------------------  */
+
+@media (max-width: 35em) {
+    main{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    header {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    header section:nth-of-type(2){
+        height: 15em;
+    }
+    header form:nth-of-type(1) {
+        grid-column: 1 / 6;
+    }
+    nav button {
+        font-size: 1em;
+    }
+    nav {
+        margin-top: -4em;
+    }
+}
+
+@media (min-width: 35em) and (max-width: 55em) {
+    main{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    section {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column: 1 / 7;
+    }
+    header {
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-start: 1;
+        grid-column-end: 5;     
+    }
+    header section:nth-of-type(2){
+        height: 15em;
+    }
+    header form:nth-of-type(1) {
+        grid-column: 1 / 6;
+    }
+    nav button {
+        font-size: 1em;
+    }
+    nav {
+        margin-top: -4em;
+    }
+}
+
+@media (min-width: 55em) and (max-width: 75em) {
+    main{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    section {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column: 1 / 7;
+    }
+    header {
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-start: 1;
+        grid-column-end: 5;     
+    }
+    header form:nth-of-type(1) {
+        grid-column: 1 / 6;
+    }
+}
+
+
+/* -------------------- EINDE VAN DE MEDIAQUERIES EINDE -------------------  */

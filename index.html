@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 
+
+
 <head>
     <title>RET verhalen</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
     <meta name="description" content="Verhalen van de RET">
     <meta name="keywords" content="RET, Verhalen, Molovich, Kaas, Henk, Matthijs">
     <meta name="author" content="Matthijs van Bodegom">
@@ -13,22 +16,28 @@
 <body>
 
     <header>
-        <nav>
+        <section>
             <h1><img src="afb/RET.svg" alt="Logo van de Rotterdamse Elektrische Tram"></h1>
-        </nav>
-
-        <form class="searchbar">
+        </section> 
+       
+        <form>
             <input id="zoeken" type="search" placeholder="zoek in verhalen">
         </form>
-
-        <form>
+        <section>
+                
+        </section>
+        <nav>
+            <button class="active">Aanbevolen</button>
+            <button class="">Filter verhalen</button>
+        </nav>
+        <form class="">
             <fieldset>
                 <legend>Waar ben je naar op zoek?</legend>
                 <label for="leesduur">Leesduur</label>
                 <input type="text" id="leesduur">
 
                 <label for="kleur">Kleur</label>
-                <input type="text" id="kleur" required minlength="20">
+                <input type="text" id="kleur">
 
                 <label for="thema">Thema</label>
                 <input type="text" id="thema">
@@ -36,27 +45,45 @@
                 <label for="schrijfstel">Schrijfstijl</label>
                 <input type="text" id="schrijfstijl">
 
-                <button>Bekijk 99 Resultaten</button>
+                <div>
+                    <button>Resetten</button>
+                    <button>Bekijk 101 Resultaten</button>
+                </div>
             </fieldset>
         </form>
+       
+
+
     </header>
 
     <main>
-        <section class="daystory">
-            <h2>Verhaal van de dag</h2>
+       <section>
+        <h2>Verhaal van de dag</h2>   
+       </section>
+        
+         <section>
+            
             <article>
-                <img src="afb/metro.jpg" alt="foto van de metro in rotterdam">
+                <img src="afb/eerste_draft_22.jpg" alt="foto van de metro in rotterdam">
                 <h3>Job Cohen</h3>
                 <p>Dit verhaal is kleurrijk, verstrooid en gemiddeld lang</p>
                 <footer>
                     <p>★★★★☆</p>
                     <p>06 november 2018</p>
+                    <section>
+                        <img src="afb/comments.svg">
+                        <p>12</p>
+                        <img src="afb/view.svg">
+                        <p>12</p>
+                    </section>
                 </footer>
             </article>
         </section>
-
-        <section class="top5story">
-            <h2>Top 5 verhalen</h2>
+        <section>
+             <h2>Top 5 verhalen</h2>
+        </section>
+        <section>
+            
             <article>
                 <img src="afb/metro.jpg" alt="foto van de metro in rotterdam">
                 <h3>Job Cohen</h3>
@@ -64,33 +91,57 @@
                 <footer>
                     <p>★★★★☆</p>
                     <p>06 november 2018</p>
+                    <section>
+                        <img src="afb/comments.svg">
+                        <p>12</p>
+                        <img src="afb/view.svg">
+                        <p>12</p>
+                    </section>
                 </footer>
             </article>
             <article>
-                <img src="afb/metro.jpg" alt="foto van de metro in rotterdam">
+                <img src="afb/Alleen-zijn.jpg" alt="foto van de metro in rotterdam">
                 <h3>Voetbal Analisten</h3>
                 <p>Dit verhaal is kleurrijk, verstrooid en gemiddeld lang</p>
                 <footer>
                     <p>★★★★☆</p>
                     <p>06 november 2018</p>
+                    <section>
+                        <img src="afb/comments.svg">
+                        <p>12</p>
+                        <img src="afb/view.svg">
+                        <p>12</p>
+                    </section>
                 </footer>
             </article>
             <article>
-                <img src="afb/metro.jpg" alt="foto van de metro in rotterdam">
+                <img src="afb/eerste_draft_22.jpg" alt="foto van de metro in rotterdam">
                 <h3>Sonnet</h3>
                 <p>Dit verhaal is kleurrijk, verstrooid en gemiddeld lang</p>
                 <footer>
                     <p>★★★★☆</p>
                     <p>06 november 2018</p>
+                    <section>
+                        <img src="afb/comments.svg">
+                        <p>12</p>
+                        <img src="afb/view.svg">
+                        <p>12</p>
+                    </section>
                 </footer>
             </article>
             <article>
-                <img src="afb/metro.jpg" alt="foto van de metro in rotterdam">
+                <img src="afb/bg_ret_2.jpg" alt="foto van de metro in rotterdam">
                 <h3>Alzheimer</h3>
                 <p>Dit verhaal is kleurrijk, verstrooid en gemiddeld lang</p>
                 <footer>
                     <p>★★★★☆</p>
                     <p>06 november 2018</p>
+                    <section>
+                        <img src="afb/comments.svg">
+                        <p>12</p>
+                        <img src="afb/view.svg">
+                        <p>12</p>
+                    </section>
                 </footer>
             </article>
             <article>
@@ -100,6 +151,13 @@
                 <footer>
                     <p>★★★★☆</p>
                     <p>06 november 2018</p>
+                    <section>
+                        <img src="afb/comments.svg">
+                        <p>12</p>
+                        <img src="afb/view.svg">
+                        <p>12</p>
+                    </section>
+                    
                 </footer>
             </article>
         </section>
@@ -130,5 +188,7 @@
 
 
     </footer>
-
+    
 </body>
+
+<script src="js/script.js"></script>
