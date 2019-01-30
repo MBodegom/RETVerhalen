@@ -1,0 +1,363 @@
+h1 {
+    width: 40ch;
+}
+
+section[name="verhaal"] {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    position: relative;
+}
+
+section[name="verhaal"]:first-child {
+    padding-top: 6em;
+}
+
+section {
+    grid-column: 2 / 5;
+}
+
+main img {
+    width: 50em;
+}
+
+#group1 {
+    background: url(afb/background_desktop1.jpg);
+}
+
+#group2 {
+    background: url(afb/background_desktop2.jpg);
+}
+
+#group3 {
+    background: url(afb/background_desktop3.jpg);
+}
+
+
+main {
+    max-width: 100%;
+    margin-top: 6em;
+
+}
+
+section[name="verhaal"] section {
+    display: block;
+    grid-column: 1 / 5;
+    height: 75vh;
+}
+
+section[name="verhaal"] section p {
+    line-height: 2;
+    padding: 2em;
+    background-color: #fff;
+    max-width: 60ch;
+    font-size: 1.2em;
+    border-radius: 25px;
+    position: relative;
+}
+
+section[name="klaarnu"] {
+    display: block !important;
+}
+
+main span:nth-of-type(1) {
+    width: 14em;
+    background: #2362f0;
+    color: #fff;
+    height: 5em;
+    text-align: center;
+    border-radius: 25px;
+    position: absolute;
+    transition-delay: 2s;
+    transform: rotate(20deg);
+    right: 0;
+    padding-top: 3em;
+    transition: all .5s cubic-bezier(.87, -.91, .19, 1.44);
+    box-shadow: 01px 5px 30px 4px rgba(0, 0, 0, 0.35);
+}
+
+main span[name="sticker2"] {
+    background: #138913;
+    height: 6em;
+    width: 16em;
+    left: 3em;
+    transform: rotate(-20deg);
+}
+
+main span[name="sticker3"] {
+    background: #f0b923;
+    height: 3em;
+    padding-top: 2em;
+    width: 8em;
+    transform: rotate(-10deg);
+}
+
+main span:hover {
+    cursor: pointer;
+}
+
+main span:active {
+    margin-right: -50em;
+}
+
+main span[name="sticker2"]:active {
+    margin-left: -70em;
+}
+
+main span[name="sticker3"]:active {
+    margin-right: -50em;
+}
+
+
+.parallax {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+
+.parallax__group {
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+
+.parallax__layer--verfore {
+    -webkit-transform: translateZ(200px) scale(.5);
+    transform: translateZ(200px) scale(.5);
+    z-index: 5;
+}
+
+.parallax__layer--fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+}
+
+.parallax__group {
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+
+
+#group1 {
+    z-index: 5;
+    /* slide over group 2 */
+}
+
+
+#group2 {
+    z-index: 3;
+    /* slide under groups 1 and 3 */
+}
+
+
+#group3 {
+    z-index: 2;
+    /* slide over group 2 and 4 */
+}
+
+section[name="beoordelen"] {
+    grid-column: 1 / 5;
+    max-width: 60em;
+}
+
+section[name="beoordelen"] h3 {
+    font-size: 1.5em;
+}
+
+section[name="beoordelen"] h3::after {
+    margin-left: 0;
+    margin: 0;
+}
+
+section[name="beoordelen"] p {
+    font-size: 2em;
+    display: block;
+    grid-column: 1;
+    margin: 0;
+}
+
+
+
+
+
+
+.rating {
+    float: left;
+    justify-self: start;
+    grid-column: 1;
+    padding: 0;
+}
+
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.rating:not(:checked) > label {
+    float: right;
+    width: 1em;
+    padding: 0 .1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    line-height: 1.2;
+    color: #ddd;
+    text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #e0bc25;
+    text-shadow: 1px 1px #e0bc25, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod, 2px 2px #e0bc25, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow: 1px 1px goldenrod, 2px 2px #e0bc25, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating > label:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 35em) {
+    h1 {
+        display: block;
+        margin-top: 3em;
+        font-size: 1.5em;
+        width: 35ch;
+    }
+
+    form:nth-of-type(1) {
+        display: none;
+    }
+
+    #group1 {
+        background: url(afb/background_mobile.jpg);
+    }
+
+    #group2 {
+        background: url(afb/background_mobile2.jpg);
+    }
+
+    #group3 {
+        background: url(afb/background_mobile3.jpg);
+    }
+}
+
+@media (min-width: 35em) and (max-width: 55em) {
+    img[src*="Desktop"] {
+        display: none;
+    }
+
+    img[src*="iPad"] {
+        display: none;
+    }
+
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 3em;
+    }
+
+    form:nth-of-type(1) {
+        display: none;
+    }
+
+    #group1 {
+        background: url(afb/background_mobile.jpg);
+    }
+
+    #group2 {
+        background: url(afb/background_mobile2.jpg);
+    }
+
+    #group3 {
+        background: url(afb/background_mobile3.jpg);
+    }
+}
+
+@media (min-width: 55em) and (max-width: 75em) {
+    img[src*="Desktop"] {
+        display: none;
+    }
+
+    img[src*="Aanbe"] {
+        display: none;
+    }
+
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 3em;
+    }
+
+    form:nth-of-type(1) {
+        display: none;
+    }
+
+}
+
+@media (min-width: 75em) {
+    img[src*="Aanbev"] {
+        display: none;
+    }
+
+    img[src*="iPad"] {
+        display: none;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+
+
+<head>
+    <title>RET | Registreren</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    <meta name="description" content="Verhalen van de RET">
+    <meta name="keywords" content="RET, Verhalen, Molovich, Kaas, Henk, Matthijs">
+    <link rel="shortcut icon" type="image/png" href="afb/favicon.png" />
+    <meta name="author" content="Matthijs van Bodegom">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="inloggen.css" type="text/css">
+
+</head>
+
+<body>
+
+    <header>
+        <section>
+            <section>
+                <a href="index.html"><img src="afb/RET.svg" name="logo" alt="Logo van de Rotterdamse Elektrische Tram"></a>
+                <a href="opgeslagen.html"><img src="afb/heart.svg" name="iconrechts" alt="Logo van de Rotterdamse Elektrische Tram"><span id="total" class="hide"></span></a>
+                <a href="inloggen.html"><img src="afb/user_active.svg" name="iconrechts" alt="Logo van de Rotterdamse Elektrische Tram"></a>
+            </section>
+        </section>
+        <section>
+        </section>
+        <section class="nav">
+            <h1>99 Verhalen Stijloefeningen</h1>
+            <form name="zoekbalk">
+                <input id="zoeken" type="search" placeholder="zoek in verhalen">
+            </form>
+
+        </section>
+
+    </header>
+    <main>
+        <h2>Registreren</h2>
+        <p>Om gebruik te maken van het opslaan van verhalen op de website en het gemakkelijk later terug lezen van verhalen kunt u zich hier registreren en van alle gemakken gebruik maken.</p>
+        <form name="registreren" action="index.html">
+            <fieldset>
+                <label for="name">Naam</label>
+                <input type="text" id="name" placeholder="Voornaam" minlength="2" required>
+                <label for="username">Gebruikersnaam</label>
+                <input type="text" id="username" placeholder="Gebruikersnaam" minlength="2" required>
+                <label for="email">Email adres</label>
+                <input type="email" id="email" placeholder="voorbeeld@mail.nl" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                <label for="password">Wachtwoord<p>minimaal 8 tekens</p></label>
+                <input type="password" id="password" placeholder="Wachtwoord" minlength="8" required>
+                <label for="herhaalWachtwoord">Herhaal wachtwoord</label>
+                <input type="password" placeholder="Herhaal wachtwoord" id="herhaalWachtwoord" required minlength="8">
+
+
+                <button type="submit">Registreren</button>
+                <a href="inloggen.html">Ik heb al een account</a>
+            </fieldset>
+
+
+        </form>
+
+
+    </main>
+    <footer name="footer">
+        <p>© 2019 Rotterdamse Elektrische Tram</p>
+        <img src="afb/RET.svg">
+
+
+
+    </footer>
+
+</body>
+
+<script src="js/check.js"></script>

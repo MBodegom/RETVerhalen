@@ -1,0 +1,119 @@
+main {
+    max-width: 40em;
+    margin-top: 10em;
+    margin-bottom: 5em;
+}
+
+p {
+    margin: 0 1em 0 1em;
+    line-height: 1.7;
+}
+
+p:nth-of-type(2) {
+    color: #b4b4b4;
+    font-size: 1em;
+}
+
+form a {
+    display: block;
+    margin-top: 1em;
+}
+
+h2 {
+    margin: 0;
+    padding-bottom: 2em !important;
+    background: none !important;
+}
+
+form p {
+    color: #b4b4b4;
+    display: inline-block;
+    margin-left: 1em;
+}
+
+form input {
+    display: block;
+    width: 100%;
+    padding: 18px 12px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
+    color: #231f20;
+    border: 2px #ebebec solid;
+    border-radius: 4px;
+    background: #fff;
+    transition: all .3s;
+}
+
+input[name="verstoppertje"] {
+    display: none;
+}
+
+form fieldset {
+    padding: 0;
+    padding-right: 1.5em;
+}
+
+form label {
+    padding-bottom: 0;
+}
+
+input:focus {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px 0 rgba(35, 31, 32, .1);
+}
+
+form[name="registreren"] input:valid {
+    background-color: #fff !important;
+    border-color: #199E4C;
+    background: url(afb/tick.svg) no-repeat 95% 50%;
+    background-size: 1.4em;
+}
+
+form[name="registreren"] input:invalid {
+    background-color: #fff !important;
+    border-color: #D82E2E;
+    background: url(afb/fout.svg) no-repeat 95% 50%;
+    background-size: 1.4em;
+}
+
+form[name="registreren"] input:nth-of-type(1):invalid {
+    background: #fff;
+    border: 2px #ebebec solid;
+}
+
+form[name="registreren"] input:nth-of-type(2):invalid {
+    background: #fff;
+    border: 2px #ebebec solid;
+}
+
+
+fieldset a {
+    color: #00477f;
+    text-decoration: underline;
+}
+
+form fieldset button:nth-of-type(1) {
+    border: none;
+    height: 4em;
+    width: 10em;
+    border-radius: 4px;
+    background-color: #004681;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+    margin-right: -1em;
+}
+
+form fieldset button:nth-of-type(1):hover {
+    background-color: #d4effc;
+    color: #00477f;
+    cursor: pointer;
+}
+
+
+@media (max-width: 55em) {
+    main {
+        margin-top: 5em;
+    }
+}

@@ -3,13 +3,15 @@
 
 
 <head>
-    <title>RET verhalen</title>
+    <title>RET Verhalen</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" initial-scale="1">
     <meta name="description" content="Verhalen van de RET">
     <meta name="keywords" content="RET, Verhalen, Molovich, Kaas, Henk, Matthijs">
     <meta name="author" content="Matthijs van Bodegom">
+    <link rel="shortcut icon" type="image/png" href="afb/favicon.png" />
     <link rel="stylesheet" href="style.css" type="text/css">
+
 
 </head>
 
@@ -17,58 +19,152 @@
 
     <header>
         <section>
-            <h1><img src="afb/RET.svg" alt="Logo van de Rotterdamse Elektrische Tram"></h1>
-        </section> 
-       
-        <form>
-            <input id="zoeken" type="search" placeholder="zoek in verhalen">
-        </form>
-        <section>
-                
+            <section>
+                <a href="index.html"><img src="afb/RET.svg" name="logo" alt="Logo van de Rotterdamse Elektrische Tram"></a>
+                <a href="opgeslagen.html"><img src="afb/heart.svg" name="iconrechts" alt="Logo van de Rotterdamse Elektrische Tram"><span id="aantal_opgeslagen" class="hide">0</span></a>
+                <a href="inloggen.html"><img src="afb/user.svg" name="iconrechts" alt="Logo van de Rotterdamse Elektrische Tram"></a>
+            </section>
+
         </section>
-        <nav>
-            <button class="active">Aanbevolen</button>
-            <button class="">Filter verhalen</button>
-        </nav>
-        <form class="">
+
+
+        <section>
+
+        </section>
+
+        <section class="nav">
+            <h1>99 Verhalen Stijloefeningen</h1>
+            <form name="zoekbalk">
+                <input id="zoeken" type="search" placeholder="zoek in verhalen">
+            </form>
+
+
+            <nav name="navigatie">
+                <button class="active">Aanbevolen</button>
+                <button class="">Filter verhalen</button>
+            </nav>
+        </section>
+        <form name="filterform" action="resultaten.html">
             <fieldset>
                 <legend>Waar ben je naar op zoek?</legend>
-                <label for="leesduur">Leesduur</label>
-                <input type="text" id="leesduur">
+                <label for="leesduur">Leesduur (in minuten) </label>
+                <section class="rangeslider">
+                    <input class="min" name="range_1" type="range" min="1" max="100" value="10" />
+                    <input class="max" name="range_1" type="range" min="1" max="100" value="90" />
+                    <span class="range_min light left">Aantal minuten</span>
+                    <span class="range_max light right">Aantal minuten</span>
+                </section>
+            </fieldset>
+            <fieldset>
 
-                <label for="kleur">Kleur</label>
-                <input type="text" id="kleur">
 
-                <label for="thema">Thema</label>
-                <input type="text" id="thema">
+                <label name="genretitel" for="genres">Kies je genre(s)</label>
 
-                <label for="schrijfstel">Schrijfstijl</label>
-                <input type="text" id="schrijfstijl">
+
+                <section name="checkboxsection">
+                    <label name="containcheckbox" for="apart">
+                        <input type="checkbox" value="5" class="filtersom" id="apart">
+                        <span name="checkmark"></span>
+                        Apart <span>5</span>
+                    </label>
+                    <label name="containcheckbox" for="derdepersoon">
+                        <input type="checkbox" value="15" class="filtersom" id="derdepersoon">
+                        <span name="checkmark"></span>
+                        Derde persoon <span>15</span>
+                    </label>
+                    <label name="containcheckbox" for="dialoog">
+                        <input type="checkbox" value="3" class="filtersom" id="dialoog">
+                        <span name="checkmark"></span>
+                        Dialoog <span>3</span>
+                    </label>
+                    <label name="containcheckbox" for="diepgaand">
+                        <input type="checkbox" value="9" class="filtersom" id="diepgaand">
+                        <span name="checkmark"></span>
+                        Diepgaand <span>9</span>
+                    </label>
+                    <label name="containcheckbox" for="fictie">
+                        <input type="checkbox" value="2" class="filtersom" id="fictie">
+                        <span name="checkmark"></span>
+                        Fictie <span>2</span>
+                    </label>
+                    <label name="containcheckbox" for="detaill">
+                        <input type="checkbox" value="10" class="filtersom" id="detaill">
+                        <span name="checkmark"></span>
+                        Gedetailleerd <span>10</span>
+                    </label>
+                    <label name="containcheckbox" for="poetisch">
+                        <input type="checkbox" value="9" class="filtersom" id="poetisch">
+                        <span name="checkmark"></span>
+                        Poëtisch <span>9</span>
+                    </label>
+                    <label name="containcheckbox" for="grof">
+                        <input type="checkbox" value="18" class="filtersom" id="grof">
+                        <span name="checkmark"></span>
+                        Grof <span>18</span>
+                    </label>
+                    <label name="containcheckbox" for="kortverhaal">
+                        <input type="checkbox" value="5" class="filtersom" id="kortverhaal">
+                        <span name="checkmark"></span>
+                        Kort verhaal <span>5</span>
+                    </label>
+                    <label name="containcheckbox" for="kortsprekend">
+                        <input type="checkbox" value="8" class="filtersom" id="kortsprekend">
+                        <span name="checkmark"></span>
+                        Kort sprekend <span>8</span>
+                    </label>
+                    <label name="containcheckbox" for="overdreven">
+                        <input type="checkbox" value="3" class="filtersom" id="overdreven">
+                        <span name="checkmark"></span>
+                        Overdreven <span>3</span>
+                    </label>
+                    <label name="containcheckbox" for="chaotisch">
+                        <input type="checkbox" value="5" class="filtersom" id="chaotisch">
+                        <span name="checkmark"></span>
+                        Chaotisch <span>5</span>
+                    </label>
+                    <label name="containcheckbox" for="informatief">
+                        <input type="checkbox" value="8" class="filtersom" id="informatief">
+                        <span name="checkmark"></span>
+                        Informatief <span>8</span>
+                    </label>
+                </section>
+
 
                 <div>
                     <button>Resetten</button>
-                    <button>Bekijk 101 Resultaten</button>
+                    <button>Bekijk <span id="filtertotaal">0</span> Resultaten</button>
                 </div>
             </fieldset>
+
         </form>
-       
-
-
     </header>
-
     <main>
-       <section>
-        <h2>Verhaal van de dag</h2>   
-       </section>
-        
-         <section>
-            
+        <h2>Verhaal van de dag</h2>
+        <section name="verhaalvddag">
+
             <article>
-                <img src="afb/eerste_draft_22.jpg" alt="foto van de metro in rotterdam">
-                <h3>Job Cohen</h3>
-                <p>Dit verhaal is kleurrijk, verstrooid en gemiddeld lang</p>
+                <input type="checkbox" id="like2" value="1" class="sum" data-toggle="checkbox" />
+                <label for="like2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
+                    </svg>
+                </label>
+                <img src="afb/nichterig.jpg" alt="foto van de metro in rotterdam">
+            </article>
+            <a href="detail.html">
+
+                <h3>Onomatopee</h3>
+                <ul name="tags">
+                    <li><img src="afb/time.svg"> 2 min</li>
+                    <li>Informatief</li>
+                    <li>Extreem</li>
+                    <li>Extreem</li>
+                    <li>Kort maar krachtig</li>
+                    <li>Grof</li>
+                </ul>
                 <footer>
-                    <p>★★★★☆</p>
+
+                    <p name="stars">★★☆☆☆</p>
                     <p>06 november 2018</p>
                     <section>
                         <img src="afb/comments.svg">
@@ -77,19 +173,151 @@
                         <p>12</p>
                     </section>
                 </footer>
-            </article>
+            </a>
+
+
         </section>
+
+        <h2>Top 5 verhalen</h2>
         <section>
-             <h2>Top 5 verhalen</h2>
-        </section>
-        <section>
-            
+
             <article>
-                <img src="afb/metro.jpg" alt="foto van de metro in rotterdam">
-                <h3>Job Cohen</h3>
-                <p>Dit verhaal is kleurrijk, verstrooid en gemiddeld lang</p>
+                <input type="checkbox" id="like3" value="1" class="sum" data-toggle="checkbox" />
+                <label for="like3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
+                    </svg>
+                </label>
+                <a href="detail.html">
+                    <img src="afb/lepra.jpg" alt="foto van de metro in rotterdam">
+                    <h3>Job Cohen</h3>
+                    <ul name="tags">
+                        <li><img src="afb/time.svg"> 2 min</li>
+                        <li>Informatief</li>
+                        <li>Extreem</li>
+                        <li>Extreem</li>
+                        <li>Kort maar krachtig</li>
+                        <li>Grof</li>
+                    </ul>
+                    <footer>
+
+                        <p name="stars">★★☆☆☆</p>
+                        <p>06 november 2018</p>
+                        <section>
+                            <img src="afb/comments.svg">
+                            <p>12</p>
+                            <img src="afb/view.svg">
+                            <p>12</p>
+                        </section>
+                    </footer>
+                </a>
+            </article>
+
+            <article>
+                <input type="checkbox" id="like4" value="1" class="sum" data-toggle="checkbox" />
+                <label for="like4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
+                    </svg>
+                </label>
+                <a href="detail.html">
+                    <img src="afb/alzheimer.jpg" alt="foto van de metro in rotterdam">
+                    <h3>Presentator die ten onrechte denkt aansluiting te hebben gevonden bij ‘de kids’</h3>
+                    <ul name="tags">
+                        <li><img src="afb/time.svg"> 2 min</li>
+                        <li>Informatief</li>
+                        <li>Extreem</li>
+                        <li>Chaotisch</li>
+                    </ul>
+                    <footer>
+
+                        <p name="stars">★★★☆☆</p>
+                        <p>06 november 2018</p>
+                        <section>
+                            <img src="afb/comments.svg">
+                            <p>12</p>
+                            <img src="afb/view.svg">
+                            <p>12</p>
+                        </section>
+                    </footer>
+                </a>
+            </article>
+
+            <article>
+                <input type="checkbox" id="like5" value="1" class="sum" data-toggle="checkbox" />
+                <label for="like5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
+                    </svg>
+                </label>
+                <a href="detail.html">
+                    <img src="afb/eerste_draft_22.jpg" alt="foto van de metro in rotterdam">
+                    <h3>Sonnet</h3>
+                    <ul name="tags">
+                        <li><img src="afb/time.svg"> 2 min</li>
+                        <li>Informatief</li>
+                        <li>Extreem</li>
+                    </ul>
+                    <footer>
+                        <p name="stars">★★★★☆</p>
+                        <p>06 november 2018</p>
+                        <section>
+                            <img src="afb/comments.svg">
+                            <p>12</p>
+                            <img src="afb/view.svg">
+                            <p>12</p>
+                        </section>
+                    </footer>
+                </a>
+            </article>
+            <article>
+                <input type="checkbox" id="like6" value="1" class="sum" data-toggle="checkbox" />
+                <label for="like6">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
+                    </svg>
+                </label>
+                <a href="detail.html">
+                    <img src="afb/martinbril.jpg" alt="foto van de metro in rotterdam">
+                    <h3>Enigszins aan de omslachtige kant</h3>
+                    <ul name="tags">
+                        <li><img src="afb/time.svg"> 2 min</li>
+                        <li>Informatief</li>
+                        <li>Extreem</li>
+                        <li>Extreem</li>
+                        <li>Kort maar krachtig</li>
+                        <li>Grof</li>
+                    </ul>
+                    <footer>
+
+                        <p name="stars">★☆☆☆☆</p>
+                        <p>06 november 2018</p>
+                        <section>
+                            <img src="afb/comments.svg">
+                            <p>12</p>
+                            <img src="afb/view.svg">
+                            <p>12</p>
+                        </section>
+                    </footer>
+                </a>
+            </article>
+
+            <article>
+                <input type="checkbox" id="like7" value="1" class="sum" data-toggle="checkbox" />
+                <label for="like7">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
+                    </svg>
+                </label>
+                <img src="afb/ericlucassen.jpg" alt="foto van de metro in rotterdam">
+                <h3>Presentator die ten onrechte denkt aansluiting te hebben gevonden bij ‘de kids’</h3>
+                <ul name="tags">
+                    <li><img src="afb/time.svg"> 2 min</li>
+                    <li>Informatief</li>
+                    <li>Extreem</li>
+                </ul>
                 <footer>
-                    <p>★★★★☆</p>
+                    <p name="stars">★★★★☆</p>
                     <p>06 november 2018</p>
                     <section>
                         <img src="afb/comments.svg">
@@ -97,98 +325,48 @@
                         <img src="afb/view.svg">
                         <p>12</p>
                     </section>
+
                 </footer>
             </article>
             <article>
-                <img src="afb/Alleen-zijn.jpg" alt="foto van de metro in rotterdam">
-                <h3>Voetbal Analisten</h3>
-                <p>Dit verhaal is kleurrijk, verstrooid en gemiddeld lang</p>
-                <footer>
-                    <p>★★★★☆</p>
-                    <p>06 november 2018</p>
-                    <section>
-                        <img src="afb/comments.svg">
-                        <p>12</p>
-                        <img src="afb/view.svg">
-                        <p>12</p>
-                    </section>
-                </footer>
-            </article>
-            <article>
-                <img src="afb/eerste_draft_22.jpg" alt="foto van de metro in rotterdam">
-                <h3>Sonnet</h3>
-                <p>Dit verhaal is kleurrijk, verstrooid en gemiddeld lang</p>
-                <footer>
-                    <p>★★★★☆</p>
-                    <p>06 november 2018</p>
-                    <section>
-                        <img src="afb/comments.svg">
-                        <p>12</p>
-                        <img src="afb/view.svg">
-                        <p>12</p>
-                    </section>
-                </footer>
-            </article>
-            <article>
-                <img src="afb/bg_ret_2.jpg" alt="foto van de metro in rotterdam">
-                <h3>Alzheimer</h3>
-                <p>Dit verhaal is kleurrijk, verstrooid en gemiddeld lang</p>
-                <footer>
-                    <p>★★★★☆</p>
-                    <p>06 november 2018</p>
-                    <section>
-                        <img src="afb/comments.svg">
-                        <p>12</p>
-                        <img src="afb/view.svg">
-                        <p>12</p>
-                    </section>
-                </footer>
-            </article>
-            <article>
-                <img src="afb/metro.jpg" alt="foto van de metro in rotterdam">
-                <h3>Een Willekeurige Lange Titel</h3>
-                <p>Dit verhaal is kleurrijk, verstrooid en gemiddeld lang</p>
-                <footer>
-                    <p>★★★★☆</p>
-                    <p>06 november 2018</p>
-                    <section>
-                        <img src="afb/comments.svg">
-                        <p>12</p>
-                        <img src="afb/view.svg">
-                        <p>12</p>
-                    </section>
-                    
-                </footer>
+                <input type="checkbox" id="like8" value="1" class="sum" data-toggle="checkbox" />
+                <label for="like8">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
+                    </svg>
+                </label>
+                <a href="detail.html">
+                    <img src="afb/onomatopee.jpg" alt="foto van de metro in rotterdam">
+                    <h3>Onomatopee</h3>
+                    <ul name="tags">
+                        <li><img src="afb/time.svg"> 2 min</li>
+                        <li>Informatief</li>
+                        <li>Extreem</li>
+                    </ul>
+                    <footer>
+                        <p name="stars">★★★★★</p>
+                        <p>06 november 2018</p>
+                        <section>
+                            <img src="afb/comments.svg">
+                            <p>12</p>
+                            <img src="afb/view.svg">
+                            <p>12</p>
+                        </section>
+                    </footer>
+                </a>
             </article>
         </section>
     </main>
-    <footer>
-        <section>
-            <h4>Contact</h4>
-            <ul>
-                <li>Contact</li>
-                <li>Sitemap</li>
-                <li>FAQ</li>
-            </ul>
-            <h4>Sitemap</h4>
-            <ul>
-                <li>Contact</li>
-                <li>Sitemap</li>
-                <li>FAQ</li>
-            </ul>
-            <h4>FAQ</h4>
-            <ul>
-                <li>Contact</li>
-                <li>Sitemap</li>
-                <li>FAQ</li>
-            </ul>
-        </section>
+    <footer name="footer">
+        <p>© 2019 Rotterdamse Elektrische Tram</p>
         <img src="afb/RET.svg">
 
 
 
     </footer>
-    
+
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/slider.js"></script>

@@ -26,20 +26,40 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0 auto;
     padding: 0;
+
 }
 
 h1 {
-    margin: 0 auto;
-    margin-bottom: 1em;
-    padding-top: 1em;
-    width: 1em;
-    height: .5em;
+    grid-column: 1;
+    align-self: end;
+    color: #fff;
+    font-style: italic;
+    font-size: 2.8em;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 1em;
+    z-index: 2;
+}
+
+
+
+main h2:first-child {
+    background-color: #fff;
+    padding: 1em;
+    margin: 0;
+    height: 1em;
 }
 
 h2 {
     color: #00477f;
     font-weight: 400;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-left: 1em;
+    margin-top: 2em;
+    grid-column: 2;
 }
+
 
 h2::after {
     bottom: -10px;
@@ -52,71 +72,137 @@ h2::after {
     width: 5.25em;
 }
 
-button:focus { 
-    outline: none; 
+h5 {
+    margin-left: 1em;
+    display: inline-block;
+    color: #6d6e71;
 }
+
+button:focus {
+    outline: none;
+}
+
 input:focus {
     outline: none;
 }
+
+p[name="stars"] {
+    color: #e0bc25;
+    font-size: 1.5em;
+}
+
 
 
 /* -------------------- EINDE VAN DE ALGEMENE CSS -------------------  */
 
 /* -------------------- BEGIN VAN HEADER MET SEARCH EN FILTER -------------------  */
 
+
+
 header {
     background: #f5f5f6;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 5% 30% 30% 30% 5%;
 }
 
 header section {
     width: 100%;
     background: #fff;
-    height: 4em;
     display: block;
     padding: 0em;
-    box-shadow: 1px 1px 20px #bcbcbc;
     grid-column: 1 / 7;
+    display: grid;
 }
+
 
 header section:first-child {
-    height: 4em;
+    display: flex;
+    justify-content: space-between;
 }
 
-header section:first-child img:nth-of-type(2) {
-    height: 2em;
-    width: 2em;
-    display: none;
+header section:first-child section {
+    max-width: 60em;
+}
+
+header section:first-child a:first-child {
+    padding: .5em;
+}
+
+header section:first-child a:nth-of-type(2) {
+    margin-left: auto;
+    width: 4em;
+    position: relative;
+}
+
+
+header section:first-child a:nth-of-type(2) span {
+    position: absolute;
+    top: .5em;
+    left: 1em;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    width: 1.1em;
+    height: 1.1em;
+    line-height: 1em;
+    background: #e90f1d;
+    border-radius: 12px;
+}
+
+header section:first-child a:nth-of-type(1) img {
+    width: 5em;
+}
+
+
+
+header section:first-child a:nth-of-type(2) img {
+    height: 1.5em;
+    padding: 1em 0em 1em 0em;
+}
+
+header section:first-child a:nth-of-type(3) img {
+    height: 1.5em;
+    padding: 1em;
+}
+
+form img {
+    width: 50%;
+    height: 100%;
 }
 
 header section:nth-of-type(2) {
     background-image: url(afb/background_ret.jpg);
-    height: 29em;
-    margin-top: -11em;
-    display: block;
-}
-
-header section:nth-of-type(3) {
-    display: flex;
-    flex-direction: column;
-    transition: all .5s;
-    padding: 1em;
-    grid-column: 3 / 5;
     height: 20em;
+    background-size: cover;
+    position: absolute;
+    margin-top: 3.5em;
+    display: block;
+    display: grid;
+    grid-template-columns: 5% 30% 30% 30% 5%;
+    grid-template-rows: 50% 50%;
 }
 
-h1 {
-    margin: 0 auto;
-    margin-bottom: 1em;
-    padding-top: 1em;
-    width: 1em;
-    height: .5em;
+header section:nth-of-type(2) .overlay {
+    background: linear-gradient(150deg, #00477f 0, #009ddb 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+}
+
+
+
+
+header section:nth-of-type(3) img:nth-of-type(1) {
+    width: 5em;
+    padding: 1em;
+    margin-left: auto;
 }
 
 legend {
     color: #00477f;
-    font-size: 20px;
+    font-size: 1.5em;
     margin-bottom: 2em;
     padding: 0;
 }
@@ -134,15 +220,15 @@ legend::after {
 }
 
 
-header form:nth-of-type(1) {
+header form[name="zoekbalk"] {
     height: 6em;
     padding-top: 4em;
     z-index: 99;
     grid-column: 3 / 5;
-    
+
 }
 
-header form:nth-of-type(1) input {
+header form[name="zoekbalk"] input {
     width: 100%;
     padding: 1em;
     border: none;
@@ -154,58 +240,63 @@ header form:nth-of-type(1) input {
     grid-column: 2 / 5;
 }
 
-
-nav {
+header article {
     display: flex;
-    margin-top: -6em;
-    grid-column: 2 / 5;
 }
 
-nav button {
+header article img {
+    width: 40% !imporant;
+    height: auto;
+}
+
+nav[name="navigatie"] {
+    display: flex;
+    margin-top: 4em;
+    grid-column: 1 / 5;
+    height: 4em;
+}
+
+nav[name="navigatie"] button {
     background-color: #f5f5f6;
     border: none;
     border-radius: 4px 4px 0 0;
-    padding: 1em;
+    padding: 0 1em 0 1em;
     font-family: 'Source Sans Pro', sans-serif;
-    margin: 0;
     font-size: 1.5em;
     line-height: 1.7;
     justify-content: space-between;
     width: 50%;
-    padding-bottom: 0.5em;
     vertical-align: bottom;
     cursor: pointer;
-    margin-top: 1em;
     color: #6d6e71;
+    position: relative;
     display: block;
 }
 
-nav button:hover {
-    -webkit-transition: 0.1s; /* Safari */
+nav[name="navigatie"] button:hover {
+    -webkit-transition: 0.1s;
+    /* Safari */
     transition: .3s;
-}
-
-nav button:nth-of-type(2):hover {
     color: black;
-    cursor: pointer;
 }
 
-nav button:nth-of-type(1) {
-    padding-top: 1em;
+
+nav[name="navigatie"] button:nth-of-type(1) {
     text-align: left;
 }
 
-nav button:nth-of-type(2) {
+nav[name="navigatie"] button:nth-of-type(2) {
     text-align: right;
 }
 
-nav button:nth-of-type(2)::after {
+nav[name="navigatie"] button:nth-of-type(2)::after {
     float: right;
 }
 
 
-ul {
-    display: flex;
+.nav {
+    width: 100%;
+    max-width: 60em;
 }
 
 form {
@@ -217,51 +308,170 @@ form {
     grid-column: 2 / 5;
 }
 
-form:nth-of-type(2) {
+form[name="filterform"] {
     background-color: #fff;
     display: none;
+    padding: 5em 0;
+    padding-bottom: 0;
+    max-width: 60em;
+    width: 100%;
+    margin: 0 auto;
+}
+
+form[name="filterform"] fieldset label span:nth-of-type(2) {
+    color: #8e8e8e;
 }
 
 fieldset {
     margin: 0;
     border: none;
-    padding-left: 0;
+    padding: 2em;
 }
 
 label {
     color: #00477f;
     padding: 1em;
     padding-left: 0;
-    margin-bottom: 1em;
+    display: block;
+    font-size: 1.2em;
 }
 
+form label[name*=gen] {
+    margin-top: 2em;
+}
+
+fieldset legend {
+    margin-bottom: 0;
+}
+
+
 fieldset input {
-    border: 2px solid #ebebec;
+    border: none;
     padding: .5em .25em;
     font-size: 1.25em;
     margin-bottom: 1.5em;
     margin-top: .5em;
     width: 100%;
-    z-index: 2;
-    border-radius: 3px;
+    max-width: 40em;
+    display: block;
+    border-radius: 5px;
 }
 
-form fieldset button:nth-of-type(1) {
+
+
+input[type='range'] {
+    width: 210px;
+    height: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    width: 20em;
+    height: 5px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+input[type='range']:nth-child(2)::-webkit-slider-runnable-track {
+    background: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    position: relative;
+    height: 1em;
+    width: 1em;
+    margin-top: -7px;
+    background: #003D7C;
+    border: 1px solid #003D7C;
+    border-radius: 25px;
+    z-index: 3 !important;
+}
+
+
+input[type='range']:nth-child(1)::-webkit-slider-thumb {
+    z-index: 2;
+}
+
+.rangeslider {
+    position: relative;
+    height: 2em;
+    width: 19em;
+    display: inline-block;
+    margin-top: -5px;
+    margin-left: 20px;
+}
+
+.rangeslider input {
+    position: absolute;
+    padding-top: 0;
+    margin-top: 0;
+    width: 15em;
+}
+
+.rangeslider {
+    position: absolute;
+    margin-left: 0;
+}
+
+.rangeslider span {
+    position: absolute;
+    margin-top: 30px;
+    left: 0;
+    color: #004681;
+}
+
+.rangeslider .right {
+    position: relative;
+    float: right;
+    margin-right: -5px;
+}
+
+
+
+input[name*="genre"] {
+    background-color: #F5F5F6;
+}
+
+input[type*="time"] {
+    display: inline-block;
+    width: 5em;
+    line-height: 25px;
+    font-size: 18px;
+    color: #13679c;
+    background: 0 0;
+    margin-top: 4px;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    background-image: linear-gradient(to top, transparent, transparent 1px, #b6b6b8 1px, #b6b6b8 2.5px, transparent 3px);
+}
+
+form[name="filterform"] fieldset button:nth-of-type(1) {
     background-color: #e0e0e0;
     color: gray;
-    width: 10em;
+    width: 8em;
     margin-right: 1em;
 }
 
 fieldset div {
-    display: flex;
+    display: block;
     justify-content: flex-end;
+    margin-top: 2em;
 }
 
 fieldset div button {
     border: none;
     height: 4em;
     width: 15em;
+    margin-top: 1em;
     border-radius: 4px;
     background-color: #004681;
     color: #fff;
@@ -272,21 +482,116 @@ fieldset div button {
 
 }
 
-form button:hover {
+form[name="filterform"] button:hover {
     background-color: #d4effc;
     color: #00477f;
 }
 
+
+h3[name="aanbevolen_title"] {
+    font-size: 1.7em;
+    margin-top: 0;
+}
+
+section[name="aanbevolen_info"] footer {
+    color: #b9b9b9;
+}
+
+input[type=checkbox] {
+    border: 1px solid #13679c;
+    display: inline-block;
+    width: 1em;
+}
+
+section[name="checkboxsection"] {
+    max-width: 40em;
+    margin-left: 0;
+}
+
+label[name=containcheckbox] {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin-right: 2em;
+    padding-left: 2em;
+    margin-bottom: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+label[name=containcheckbox] input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    border-color: #13679c;
+}
+
+
+span[name=checkmark] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+
+label[name=containcheckbox]:hover input ~ span[name=checkmark] {
+    background-color: #ccc;
+}
+
+label[name=containcheckbox] input:checked ~ span[name=checkmark] {
+    background-color: #f5f5f6;
+}
+
+
+span[name=checkmark]:after {
+    content: "";
+    position: absolute;
+    display: none;
+
+}
+
+
+label[name=containcheckbox] input:checked ~ span[name=checkmark]:after {
+    display: block;
+}
+
+
+label[name=containcheckbox] span[name=checkmark]:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #009ddb;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
 
 
 /* -------------------- BEGIN FILTER STATE  -------------------  */
 
 
 .active {
-    background-color: #fff;
-    color: #13679c;
-    margin-top: 0em;
-    
+    background-color: #fff !important;
+    color: #13679c !important;
+    margin-top: -1em;
+
+}
+
+nav[name="navigatie"] button:nth-of-type(1)::after {
+    left: 1em;
 }
 
 .active::after {
@@ -297,10 +602,24 @@ form button:hover {
     margin: 6px 0 0;
     content: '';
     position: relative;
+    position: absolute;
+    right: 1em;
+}
+
+.active:hover {
+    color: #004681;
 }
 
 .show {
     display: block !important;
+}
+
+.showrec {
+    display: grid;
+}
+
+.hide {
+    display: none;
 }
 
 /* -------------------- EINDE FILTER STATE EINDE -------------------  */
@@ -311,31 +630,118 @@ form button:hover {
 /* -------------------- BEGIN VAN DE ARTICLES SECTIE -------------------  */
 
 main {
-   display: grid; 
-   grid-template-columns: repeat(5, 1fr);
-   
+    margin: 0 auto;
+    max-width: 60em;
+}
+
+main a[href^="index"] {
+    color: #004681;
+    padding: 1em;
+}
+
+main a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
 }
 
 section {
     padding: 0.9em;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);   
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em;
     grid-column-start: 2;
     grid-column-end: 5;
 }
 
+section[name="verhaalvddag"] {
+    background: #fff;
+}
+
+section[name="verhaalvddag"] h3 {
+    font-size: 2em;
+    margin: 0;
+}
+
+section[name="verhaalvddag"] article {
+    box-shadow: none;
+    grid-column: 1 / 3;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+section[name="verhaalvddag"] img {
+    border-radius: 0;
+}
+
+section[name="verhaalvddag"] article:hover {
+    transform: none;
+}
+
+section[name="verhaalvddag"] ul {
+    justify-content: flex-start;
+}
+
+section[name="verhaalvddag"] a {
+    color: #b3b3b3;
+    position: relative;
+    height: 100%;
+}
+
+section[name="verhaalvddag"] p {
+    margin: .5em;
+    margin-left: 0;
+}
+
+section[name="verhaalvddag"] p[name="stars"] {
+    font-size: 2em;
+}
+
+section[name="verhaalvddag"] h3::after {
+    margin-left: 0;
+}
+
+section[name="verhaalvddag"] footer section {
+    display: flex;
+    padding: 0;
+}
+
+section[name="verhaalvddag"] footer {
+    position: absolute;
+    bottom: 0;
+}
+
+section[name="verhaalvddag"] footer img {
+    margin-bottom: 1em;
+    height: auto;
+    padding: 0;
+    width: 1.5em;
+    margin: 0em .3em 0em .5em;
+}
+
+section[name="verhaalvddag"] footer img:first-child {
+    margin-left: 0em;
+}
+
+
+
 article {
+    position: relative;
     background: #fff;
     border-radius: 4px;
-    box-shadow: 2px 5px 2px #e5e5e5;
+    box-shadow: 0 10px 30px 0 rgba(35, 31, 32, .1);
     margin-bottom: 1.5em;
     margin-top: 1.5em;
     text-align: center;
     color: #6d6e71;
     padding: 1em;
+    padding-bottom: 6em;
     transition: all 0.2s cubic-bezier(.87, -.41, .19, 1.44);
+}
+
+article:hover {
+    transform: scale(1.05);
 }
 
 p {
@@ -354,14 +760,19 @@ h3::after {
     display: block;
     height: .05em;
     margin: 0 auto;
-    margin-bottom: 2em;
+    margin-bottom: 1.3em;
     position: relative;
     width: 5.25em;
 }
 
 article footer {
     padding-top: 0;
-    
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
 }
 
 article footer img {
@@ -370,6 +781,7 @@ article footer img {
     padding-top: 1em;
     width: 1.5em;
     height: 1em;
+
 }
 
 article footer p {
@@ -381,54 +793,99 @@ article footer p {
     padding-top: 0;
 }
 
+ul[name="tags"] {
+    left: 0;
+    right: 0;
+    text-align: center;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    margin-top: 0;
+    flex-wrap: wrap;
+}
+
+ul[name="tags"] li {
+    list-style-type: none;
+    background: #f5f5f6;
+    color: #b3b3b3;
+    padding: 0.2em;
+    border-radius: 4px;
+    margin: .4em .2em 0em .2em;
+}
+
+ul[name="tags"] li:first-child {
+    color: #adadad;
+}
+
+
+ul[name="tags"] li img {
+    margin: 0;
+    padding: 0;
+    width: 1em;
+}
+
 article footer section {
     display: flex;
     padding-bottom: 0;
     justify-content: center;
 }
 
+
+article footer section p {
+    margin-top: 0;
+}
+
+article footer section img {
+    width: 1.5em;
+    text-align: right;
+}
+
+article footer section img:nth-of-type(2) {
+    margin-left: 1em
+}
+
+
 article footer section::after {
     display: none;
 }
 
-article:hover {
-    transform: scale(1.05);
-}
 
-img {
+main article img {
     width: 100%;
     width: calc(100% + 2em);
     margin-left: -1em;
     margin-top: -1em;
     border-radius: 4px 4px 0 0;
+    max-height: em;
 }
+
 
 /* -------------------- EINDE VAN DE ARTICLES EINDE -------------------  */
 
 /* -------------------- BEGIN VAN DE FOOTER -------------------  */
 
-footer {
+footer[name*="footer"] {
     background: #fff;
     padding: 1em 0 0;
+    display: flex;
+    width: 100%;
+    height: 4em;
+    justify-content: space-between;
 }
 
-footer section::after {
-    bottom: -10px;
-    content: "";
-    border-bottom: 2px solid #ed1a2d;
-    display: block;
-    height: .25em;
-    margin-bottom: .5em;
-    position: relative;
-    width: 100%;
+footer[name*="footer"] p {
+    padding-left: 2em;
+    color: #ccc;
+}
+
+footer[name*="footer"] img {
+    width: 10em;
 }
 
 footer img {
-    margin: 0 auto;
     margin-bottom: 1em;
     padding-top: 1em;
-    width: 5em;
-    height: auto;
+    height: auto
 }
 
 h4 {
@@ -437,89 +894,264 @@ h4 {
     font-size: 1.2em;
 }
 
-ul {
-    margin-left: 0;
-    padding: 0;
-}
 
-ul li {
-    list-style-type: none;
-    margin-bottom: 1em;
-    color: #13679c;
-}
+
 
 /* -------------------- EINDE VAN DE FOOTER EINDE -------------------  */
 
 /* -------------------- BEGIN VAN DE MEDIAQUERIES -------------------  */
 
 @media (max-width: 35em) {
-    main{
+    main {
         grid-template-columns: repeat(1, 1fr);
     }
+
     section {
         grid-template-columns: repeat(1, 1fr);
     }
+
     header {
         grid-template-columns: repeat(1, 1fr);
     }
-    header section:nth-of-type(2){
+
+    header section:nth-of-type(2) {
         height: 15em;
     }
+
     header form:nth-of-type(1) {
-        grid-column: 1 / 6;
+        grid-column: 1 / 5;
     }
+
     nav button {
-        font-size: 1em;
+        font-size: 1.2em !important;
     }
+
     nav {
-        margin-top: -4em;
+        margin-top: 0em !important;
+
     }
+
+    form:nth-of-type(2) {
+        padding: 1em;
+        padding-top: 2em;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    form:nth-of-type(3) {
+        padding: 0;
+    }
+
+    fieldset {
+        padding: 1em;
+    }
+
+    section[name="verhaalvddag"] a {
+        padding-bottom: 3em;
+    }
+
+    section[name="verhaalvddag"] {
+        padding-bottom: 5em;
+    }
+
+    section[name="verhaalvddag"] h3 {
+        font-size: 1.5em;
+    }
+
+    section[name="verhaalvddag"] p[name="stars"] {
+        font-size: 1.7em;
+    }
+
 }
 
 @media (min-width: 35em) and (max-width: 55em) {
-    main{
+    main {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    h1 {
+        display: none;
+    }
+
     section {
         grid-template-columns: repeat(2, 1fr);
         grid-column: 1 / 7;
     }
+
     header {
         grid-template-columns: repeat(1, 1fr);
         grid-column-start: 1;
-        grid-column-end: 5;     
+        grid-column-end: 5;
     }
-    header section:nth-of-type(2){
+
+    header section:nth-of-type(2) {
         height: 15em;
     }
+
     header form:nth-of-type(1) {
-        grid-column: 1 / 6;
+        grid-column: 1 / 5;
     }
+
     nav button {
         font-size: 1em;
     }
+
     nav {
-        margin-top: -4em;
+        margin-top: 0em !important;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    form:nth-of-type(3) {
+        padding: 0;
+    }
+
+    section[name="verhaalvddag"] a {
+        padding-bottom: 3em;
+    }
+
+    section[name="verhaalvddag"] {
+        padding-bottom: 6em;
+    }
+
+    section[name="verhaalvddag"] h3 {
+        font-size: 1.7em;
+    }
+
+    section[name="verhaalvddag"] p[name="stars"] {
+        font-size: 1.7em;
     }
 }
 
 @media (min-width: 55em) and (max-width: 75em) {
-    main{
-        grid-template-columns: repeat(5, 1fr);
+    main {
+        grid-template-columns: repeat(3, 1fr);
     }
+
     section {
         grid-template-columns: repeat(3, 1fr);
         grid-column: 1 / 7;
     }
-    header {
-        grid-template-columns: repeat(5, 1fr);
-        grid-column-start: 1;
-        grid-column-end: 5;     
-    }
-    header form:nth-of-type(1) {
-        grid-column: 1 / 6;
+
+    header form[name="zoekbalk"] {
+        grid-column: 3 / 5;
     }
 }
 
 
 /* -------------------- EINDE VAN DE MEDIAQUERIES EINDE -------------------  */
+
+
+input[type=checkbox] {
+    clear: both;
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    position: absolute;
+    z-index: 100;
+    overflow: hidden;
+    padding: 1em;
+    right: 1em;
+    top: 1em;
+    display: block;
+    text-align: center;
+    line-height: 1.5;
+    cursor: pointer;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+input[type="checkbox"] + label:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background: rgb(228, 16, 43);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    -webkit-ransform: scale(0);
+}
+
+input[type="checkbox"] + label:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+
+input[type="checkbox"]:checked + label svg {
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    fill: rgb(228, 16, 43);
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+}
+
+input[type="checkbox"]:checked + label:after {
+    -webkit-animation: like-a 0.3s 0.2s forwards;
+    -moz-animation: like-a 0.3s 0.2s forwards;
+    animation: like-a 0.3s 0.2s forwards;
+}
+
+input[type="checkbox"]:checked + label:before {
+    -webkit-animation: like-a 0.5s 0s forwards;
+    -moz-animation: like-a 0.5s 0s forwards;
+    animation: like-a 0.5s 0s forwards;
+}
+
+label svg {
+    display: inline-flex;
+    vertical-align: middle;
+    width: 1.5em;
+    fill: rgb(167, 167, 167);
+}
+
+label svg:hover {
+    transform: scale(1.25);
+}
+
+
+@-webkit-keyframes like-a {
+    100% {
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+        -moz-transform: scale(1.03);
+    }
+}
+
+@-moz-keyframes like-a {
+    100% {
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+        -moz-transform: scale(1.03);
+    }
+}
+
+@keyframes like-a {
+    100% {
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+        -moz-transform: scale(1.03);
+    }
+}
